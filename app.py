@@ -36,11 +36,14 @@ def insert():
         flash("Data Inserted Successfully")
         name = request.form['name']
         dob = request.form['dob']
+        Class = request.form['Class']
+        adm_no = request.form['adm_no']
         contact_info = request.form['contact_info']
+        Email = request.form['Email']
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM students")
         data = cur.fetchall()
-        cur.execute("INSERT INTO students (name,dob, contact_info) VALUES (%s,%s, %s)", (name,dob, contact_info))
+        cur.execute("INSERT INTO students (name,dob,Class,adm_no, contact_info,Email) VALUES (%s,%s,%s,%s, %s,%s)", (name,dob,Class,adm_no, contact_info,Email))
         mysql.connection.commit()
         cur.close()
         return redirect(url_for('home'))
@@ -63,14 +66,16 @@ def update():
     if request.method == 'POST':
         id_data = request.form['id']
         name = request.form['name']
+        Class = request.form['Class']
+        adm_no = request.form['adm_no']
         dob = request.form['dob']
         contact_info = request.form['contact_info']
-
+        Email = request.form['Email']
         cur = mysql.connection.cursor()
         cur.execute("""
-        UPDATE students SET name=%s,dob=%s, contact_info=%s
+        UPDATE students SET name=%s,dob=%s,Class=%s ,adm_no=%s,contact_info=%s,Email=%s
         WHERE id=%s
-        """, (name, dob, contact_info, id_data))
+        """, (name, dob,Class,adm_no, contact_info,Email, id_data))
         flash("Data Updated Successfully")
         cur.execute("SELECT * FROM students")
         data = cur.fetchall()

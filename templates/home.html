@@ -20,7 +20,9 @@
       border: 1px solid #ddd;
       padding: 8px;
     }
-    
+    section{
+        background-color: antiquewhite;
+    }
     .table tr:nth-child(even){background-color: #f2f2f2;}
     
     .table tr:hover {background-color: #ddd;}
@@ -35,10 +37,10 @@
     </style>
     
 <body>
-    
+<section>    
 <div class="container-fluid">
 <h1 class="text-center alert alert-danger">STUDENT MANAGEMENT</h1>
-<a href="http://127.0.0.1:5000/adminlogin" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">LOGOUT</a>
+<a href="http://127.0.0.1:5000/index" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">LOGOUT</a>
         <div class="row">
             <div class="col-sm-2"></div>
 
@@ -85,10 +87,26 @@
                             <input type="date" name="dob" class="form-control" id="exampleFormControlInput1" placeholder="Enter DOB">
                         </div>
 
+                        
+                        <div class="form-group">
+                            <label>Class</label>
+                            <input type="text" name="Class" class="form-control" id="exampleFormControlInput1" placeholder="Enter Class">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Adm_no</label>
+                            <input type="text" name="adm_no" class="form-control" id="exampleFormControlInput1" placeholder="Enter Adm_no">
+                        </div>
+
                         <div class="form-group">
                             <label>Phone Number</label>
                             <input name="contact_info" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
                           </div>
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input name="Email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
+                          </div>
+
 
                           <button type="submit" class="btn btn-primary mb-2">Save</button>
                      
@@ -109,7 +127,10 @@
             <th scope="col">S/N</th>
             <th scope="col">Name</th>
             <th scope="col">DOB</th>
+            <th scope="col">Class</th>
+            <th scope="col">Adm_no</th>
             <th scope="col">contact_info</th>
+            <th scope="col">Email</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -120,6 +141,9 @@
         <td>{{row.1}}</td>
         <td>{{row.2}}</td>
         <td>{{row.3}}</td>
+        <td>{{row.4}}</td>
+        <td>{{row.5}}</td>
+        <td>{{row.6}}</td>
         <td>
             <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
             <a href="/delete/{{ row.0 }}" onclick="return confirm('Are Sure Want To Deleted ?')" class="btn btn-danger btn-sm">Delete</a>
@@ -155,8 +179,23 @@
                               </div>
     
                             <div class="form-group">
+                                <label>Class</label>
+                                <input value="{{row.3}}" type="text" name="Class" class="form-control" id="exampleFormControlInput1" placeholder="Enter Class">
+                            </div>
+                            <div class="form-group">
+                                <label>Adm_no</label>
+                                <input value="{{row.4}}" type="text" name="adm_no" class="form-control" id="exampleFormControlInput1" placeholder="Enter Adm_no">
+                            </div>
+                   
+                   
+                            <div class="form-group">
                                 <label>Phone Number</label>
-                                <input value="{{row.3}}" name="contact_info" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
+                                <input value="{{row.5}}" name="contact_info" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
+                              </div>
+    
+                              <div class="form-group">
+                                <label>Email</label>
+                                <input value="{{row.6}}" name="Email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
                               </div>
     
                               <button type="submit" class="btn btn-success mb-2">Update</button>
@@ -183,7 +222,7 @@
 
         </div>
     </div>
-
+</section>
  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
