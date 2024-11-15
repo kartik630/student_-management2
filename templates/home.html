@@ -107,6 +107,16 @@
                             <input name="Email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
                           </div>
 
+                          
+                          <div class="form-group">
+                            <label>Gender</label>
+                            <input name="gender" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Gender">
+                          </div>
+                          
+                          <div class="form-group">
+                            <label>Blood</label>
+                            <input name="blood" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Blood Group">
+                          </div>
 
                           <button type="submit" class="btn btn-primary mb-2">Save</button>
                      
@@ -131,6 +141,8 @@
             <th scope="col">Adm_no</th>
             <th scope="col">contact_info</th>
             <th scope="col">Email</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Blood</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -144,6 +156,8 @@
         <td>{{row.4}}</td>
         <td>{{row.5}}</td>
         <td>{{row.6}}</td>
+        <td>{{row.7}}</td>
+        <td>{{row.8}}</td>
         <td>
             <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
             <a href="/delete/{{ row.0 }}" onclick="return confirm('Are Sure Want To Deleted ?')" class="btn btn-danger btn-sm">Delete</a>
@@ -197,6 +211,16 @@
                                 <label>Email</label>
                                 <input value="{{row.6}}" name="Email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
                               </div>
+                              <div class="form-group">
+                                <label>Gender</label>
+                                <input value="{{row.7}}" name="gender" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Gender">
+                              </div>
+    
+                              <div class="form-group">
+                                <label>Blood</label>
+                                <input value="{{row.8}}" name="blood" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Blood Group">
+                              </div>
+    
     
                               <button type="submit" class="btn btn-success mb-2">Update</button>
                          

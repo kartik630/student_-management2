@@ -40,10 +40,12 @@ def insert():
         adm_no = request.form['adm_no']
         contact_info = request.form['contact_info']
         Email = request.form['Email']
+        gender = request.form['gender']
+        blood = request.form['blood']
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM students")
         data = cur.fetchall()
-        cur.execute("INSERT INTO students (name,dob,Class,adm_no, contact_info,Email) VALUES (%s,%s,%s,%s, %s,%s)", (name,dob,Class,adm_no, contact_info,Email))
+        cur.execute("INSERT INTO students (name,dob,Class,adm_no, contact_info,Email,gender,blood) VALUES (%s,%s,%s,%s, %s,%s,%s,%s)", (name,dob,Class,adm_no, contact_info,Email,gender,blood))
         mysql.connection.commit()
         cur.close()
         return redirect(url_for('home'))
@@ -71,11 +73,13 @@ def update():
         dob = request.form['dob']
         contact_info = request.form['contact_info']
         Email = request.form['Email']
+        gender = request.form['gender']
+        blood = request.form['blood']
         cur = mysql.connection.cursor()
         cur.execute("""
-        UPDATE students SET name=%s,dob=%s,Class=%s ,adm_no=%s,contact_info=%s,Email=%s
+        UPDATE students SET name=%s,dob=%s,Class=%s ,adm_no=%s,contact_info=%s,Email=%s,gender=%s,blood=%s
         WHERE id=%s
-        """, (name, dob,Class,adm_no, contact_info,Email, id_data))
+        """, (name, dob,Class,adm_no, contact_info,Email,gender,blood, id_data))
         flash("Data Updated Successfully")
         cur.execute("SELECT * FROM students")
         data = cur.fetchall()
