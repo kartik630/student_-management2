@@ -1,20 +1,20 @@
-from extensions import db
 
+from flask_sqlalchemy import SQLAlchemy
 
-class StudentModel(db.Model):
-    __tablename__ = "students"
+db = SQLAlchemy()
 
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer() ,unique = True)
-    name = db.Column(db.String(),nullable=False)
-    dob = db.Column(db.Date(), nullable=False)
-    contact_info = db.Column(db.String(), nullable=False)
- 
-    def __init__(self, user_id,name,dob,contact_info):
-        self.user_id_id = user_id
-        self.name = name
-        self.dob = dob
-        self.contact_info = contact_info
- 
-    def __repr__(self):
-        return f"{self.name}:{self.user_id}"
+class students(db.Model):
+    id = db.Column(db.Integer, primary_key=True, AUTO_INCREMENT=True)
+    name = db.Column(db.String(100), nullable=False)
+    dob = db.Column(db.Date, nullable=False)
+    Class = db.Column(db.String(100), nullable=False)
+    adm_no = db.Column(db.String(100), nullable=False)
+    contact_info = db.Column(db.String(100), nullable=False)
+    Email = db.Column(db.String(100), nullable=False)
+    gender = db.Column(db.String(100), nullable=False)
+    blood = db.Column(db.String(100), nullable=False)
+
+class users(db.Model):
+    id = db.Column(db.Integer, primary_key=True, AUTO_INCREMENT=True)
+    username = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(100), nullable=False)
