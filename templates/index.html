@@ -1,8 +1,19 @@
-{% extends 'base2.html' %}
-{% block title %}
-Student management System
-{% endblock %}
-{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style2.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+
+<body>
 <section class="blog">
    <div class="blog-section">
       <h1>STUDENT MANAGEMENT SYSTEM</h1>
@@ -20,15 +31,12 @@ Student management System
             <div class="blog-image">
 
             </div>
-            <div class="blog-content">
-               <h2>Student Login</h2>
-               <a href="http://127.0.0.1:5000/studentlogin">LOGIN</a>
-            </div>
          </div>
       </div>
    </div>
    <div class="ty">Made By Kartik Singh Bisht</div>
 </section>
 
- 
-{% endblock %}
+</body>
+
+</html>

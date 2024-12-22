@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style2.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+
+<body>
+<section class="back">
+    <div class="back-section">
+       <h1>ADMIN MAIN DASHBOARD</h1>
+       <div class="back-cards">
+          <div class="back-card">
+             <div class="back-image">
+                <img src="#" alt="">
+             </div>
+             <div class="back-content">
+                <h2>Student Management</h2>
+                <a href="http://127.0.0.1:5000/index">USE</a>
+             </div>
+          </div>
+          <div class="back-card">
+             <div class="back-image">
+ 
+             </div>
+             <div class="back-content">
+                <h2>Attendance Management</h2>
+                <a href="http://127.0.0.1:5000/attendance">USE</a>
+             </div>
+             <div class="back-content">
+                <h2>Attendance Report</h2>
+                <a href="http://127.0.0.1:5000/view_attendance">USE</a>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="ty">Made By Kartik Singh Bisht</div>
+ </section>
+
+</body>
+
+</html>
