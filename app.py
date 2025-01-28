@@ -80,11 +80,6 @@ def update():
     
         return redirect(url_for('home'))
                         
-
-@app.route('/studentlogin')
-def student_login():        
-    return render_template('login2.html')
-
 @app.route('/adminlogin' , methods=['GET','POST'])
 def admin_login():
     if request.method == 'POST':
